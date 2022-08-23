@@ -1,0 +1,33 @@
+﻿@model List<Product>;
+@{
+  
+    ViewData["Title"] = "Product Page";
+    var products=Model;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome ProductManager</h1>
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>ID</th>
+             <th>Name</th>
+              <th>Price</th>
+               <th>Quantity</th>
+                <th>Options</th>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.Quantity</td>
+            <td>@product.Option</td>
+            </tr>
+            }
+            
+        </tbody>
+    </table>
+   
+</div>
