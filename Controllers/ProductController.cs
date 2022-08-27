@@ -9,19 +9,21 @@ namespace ProductManager.Controllers
 {
 public class ProductController : Controller
 {
-    public List<Product> Products { get; set; }
-    public ProductController()
+  private readonly datacontext _context;
+    public ProductController(datacontext context)
     {
-        Products= new List<Product>()
-        {
-            new Product(){Id=1,Name="Iphone 10",Price=500,Quantity=30,Option="hehe"},
-            new Product(){Id=2,Name="Iphone 11",Price=500,Quantity=30,Option="hehe"},
-            new Product(){Id=3,Name="Iphone 12",Price=500,Quantity=30,Option="hehe"}
-        };
+       _context=context;
     }
         public IActionResult Index()
         {
-            
+            var Products= _context.Product.ToList();
+            // var categories= new List<String>()
+            // {
+            //     "SmartPhone",
+            //     "TV"
+            // };
+            // ViewBag.categories=categories;
+          //  ViewData["Categories"]=categories;
             return View(Products);
         }
     }
