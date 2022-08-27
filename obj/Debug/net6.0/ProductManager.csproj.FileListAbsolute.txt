@@ -24,3 +24,12 @@ C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\obj\Debug\net6.0\ref
 C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\obj\Debug\net6.0\ProductManager.pdb
 C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\obj\Debug\net6.0\ProductManager.genruntimeconfig.cache
 C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\obj\Debug\net6.0\ref\ProductManager.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\Humanizer.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\ADMIN\Desktop\KiemTrucHuongDoiTuong\ProductManager\obj\Debug\net6.0\ProductManager.csproj.CopyComplete
