@@ -1,21 +1,27 @@
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace ProductManager.Models
 {
-    public class datacontext : DbContext
+    public class DataContext : DbContext
     {
-        public datacontext(DbContextOptions<datacontext> options) : base(options) { }
-         public DbSet<Product> Product { get; set; }
-         protected override void OnModelCreating(ModelBuilder builder)
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<Category> Category { get; set; }
+    
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            builder.Entity<Product>()
-                .HasOne(p=>p.Categories)
-                .WithMany(c=>c.Product)
-                .HasForeignKey(p=>p.CategoriesId);
-                
-            base.OnModelCreating(builder);
-            
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId);
+ 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
