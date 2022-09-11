@@ -9,9 +9,9 @@ using ProductManager.Models;
 
 namespace ProductManager.Migrations
 {
-    [DbContext(typeof(datacontext))]
-    [Migration("20220827082126_TaleCate")]
-    partial class TaleCate
+    [DbContext(typeof(DataContext))]
+    [Migration("20220911163403_AddSlugIntoProduct")]
+    partial class AddSlugIntoProduct
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace ProductManager.Migrations
                 .HasAnnotation("ProductVersion", "6.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("ProductManager.Models.Categories", b =>
+            modelBuilder.Entity("ProductManager.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -28,12 +28,11 @@ namespace ProductManager.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("ProductManager.Models.Product", b =>
@@ -42,7 +41,7 @@ namespace ProductManager.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoriesId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -67,25 +66,25 @@ namespace ProductManager.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriesId");
+                    b.HasIndex("CategoryId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("ProductManager.Models.Product", b =>
                 {
-                    b.HasOne("ProductManager.Models.Categories", "Categories")
-                        .WithMany("Product")
-                        .HasForeignKey("CategoriesId")
+                    b.HasOne("ProductManager.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categories");
+                    b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("ProductManager.Models.Categories", b =>
+            modelBuilder.Entity("ProductManager.Models.Category", b =>
                 {
-                    b.Navigation("Product");
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
